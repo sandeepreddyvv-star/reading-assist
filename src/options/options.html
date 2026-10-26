@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading Assist settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Reading Assist settings</h1>
+
+    <section aria-labelledby="h-sites">
+      <h2 id="h-sites">Sites where Reading Assist is off</h2>
+      <p id="empty">None. Use “Turn off on this site” in the toolbar popup to add one.</p>
+      <ul id="sites"></ul>
+    </section>
+
+    <section aria-labelledby="h-keys">
+      <h2 id="h-keys">Keyboard shortcuts</h2>
+      <p><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> turns Reading Assist on or off.<br>
+         <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> starts or stops reading aloud.</p>
+      <p>You can change these at <code>chrome://extensions/shortcuts</code>.</p>
+    </section>
+
+    <section aria-labelledby="h-reset">
+      <h2 id="h-reset">Reset</h2>
+      <button type="button" id="reset">Reset all settings</button>
+      <span id="reset-status" role="status"></span>
+    </section>
+
+    <section aria-labelledby="h-privacy">
+      <h2 id="h-privacy">Privacy</h2>
+      <p>Reading Assist runs entirely in your browser. It doesn’t collect, send or sell anything about you or the pages you read.
+         Your choices are stored with Chrome’s own sync storage.</p>
+    </section>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading Assist</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Reading Assist</h1>
+    <label class="switch">
+      <input type="checkbox" id="enabled">
+      <span>On</span>
+    </label>
+  </header>
+
+  <p id="note" class="note" hidden></p>
+
+  <label class="row check" id="site-row">
+    <input type="checkbox" id="site-off">
+    <span>Turn off on <strong id="site-name">this site</strong></span>
+  </label>
+
+  <section aria-labelledby="h-presets">
+    <h2 id="h-presets">Quick setups</h2>
+    <div id="presets" class="buttons"></div>
+  </section>
+
+  <section aria-labelledby="h-text">
+    <h2 id="h-text">Text</h2>
+    <label class="field">Font <select id="font"></select></label>
+    <div id="sliders"></div>
+  </section>
+
+  <section aria-labelledby="h-color">
+    <h2 id="h-color">Background</h2>
+    <div id="themes" class="themes" role="radiogroup" aria-labelledby="h-color"></div>
+  </section>
+
+  <section aria-labelledby="h-aids">
+    <h2 id="h-aids">Reading aids</h2>
+    <label class="row check"><input type="checkbox" id="ruler"><span>Reading ruler <small>follows your mouse</small></span></label>
+    <label class="row check"><input type="checkbox" id="focus"><span>Focus mode <small>dims all but the paragraph you point at</small></span></label>
+    <label class="row check"><input type="checkbox" id="anchors"><span>Word anchors <small>bold the start of each word</small></span></label>
+    <button type="button" id="speak" class="wide">▶ Read aloud</button>
+  </section>
+
+  <section aria-labelledby="h-magic">
+    <h2 id="h-magic">Magic <small>coming soon</small></h2>
+    <div id="magic" class="buttons"></div>
+  </section>
+
+  <footer><a href="#" id="options">Settings &amp; shortcuts</a></footer>
+  <script src="popup.js"></script>
+</body>
+</html>

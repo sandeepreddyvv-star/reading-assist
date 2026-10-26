@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Reading Assist",
+  "version": "0.1.0",
+  "description": "Make any web page easier to read: friendlier fonts, spacing, colors, a reading ruler, focus mode and read-aloud.",
+  "permissions": ["storage", "activeTab"],
+  "background": { "service_worker": "service-worker.js" },
+  "action": {
+    "default_title": "Reading Assist",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["fonts/*"], "matches": ["<all_urls>"] }
+  ],
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "Turn Reading Assist on or off"
+    },
+    "toggle-speech": {
+      "suggested_key": { "default": "Alt+Shift+S" },
+      "description": "Start or stop reading the page aloud"
+    }
+  }
+}
